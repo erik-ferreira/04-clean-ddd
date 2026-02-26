@@ -20,6 +20,7 @@
   "homepage": "https://github.com/erik-ferreira/04-clean-ddd#readme",
   "devDependencies": {
     "@types/node": "^25.3.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   }
 }
