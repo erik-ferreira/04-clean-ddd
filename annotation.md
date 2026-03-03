@@ -43,3 +43,7 @@
 
 - Como a aplicação vai ser desenhada
 - Converter o problema do cliente em algo palpável, um software que resolve esse problema
+
+## Value object
+
+- Propriedades das entidades que possuem regra de negócio associadas as próprias entidades
