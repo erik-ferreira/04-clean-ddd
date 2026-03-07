@@ -23,8 +23,8 @@
   "homepage": "https://github.com/erik-ferreira/04-clean-ddd#readme",
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
-    "@types/node": "^25.3.0",
-    "eslint": "^8.57.1",
+    "@types/node": "^25.3.5",
+    "eslint": "^10.0.3",
     "eslint-plugin-vitest-globals": "^1.5.0",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^6.1.1",
