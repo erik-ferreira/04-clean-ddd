@@ -11,6 +11,7 @@ interface AnswerQuestionUseCaseRequest {
 interface AnswerQuestionUseCaseResponse {
   answer: Answer;
 }
+
 export class AnswerQuestionUseCase {
   constructor(private answersRepository: AnswersRepository) {}
 
