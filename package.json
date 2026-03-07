@@ -31,6 +31,7 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
+    "@faker-js/faker": "^10.3.0",
     "dayjs": "^1.11.19"
   }
 }
