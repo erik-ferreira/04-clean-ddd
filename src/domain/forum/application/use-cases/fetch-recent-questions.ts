@@ -1,6 +1,5 @@
 import { Question } from "@/domain/forum/enterprise/entities/question";
 
-import { AnswersRepository } from "@/domain/forum/application/repositories/answers-repository";
 import { QuestionsRepository } from "@/domain/forum/application/repositories/questions-repository";
 
 interface FetchRecentQuestionCaseRequest {
