@@ -2,7 +2,6 @@ import { FetchQuestionAnswersCase } from "./fetch-question-answers";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { makeAnswer } from "teste/factories/make-answer";
 
-import { makeQuestion } from "teste/factories/make-question";
 import { InMemoryAnswersRepository } from "teste/in-memory-answers-repository";
 
 let inMemoryAnswersRepository: InMemoryAnswersRepository;
