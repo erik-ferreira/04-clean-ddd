@@ -1,5 +1,5 @@
 import { Either, left, right } from "@/either";
-import { Question } from "../../enterprise/entities/question";
+import { Question } from "@/domain/forum/enterprise/entities/question";
 import { QuestionsRepository } from "../repositories/questions-repository";
 import { ResourceNotFoundError } from "../errors/resource-not-found-error";
 
@@ -26,6 +26,8 @@ export class GetQuestionBySlugUseCase {
       return left(new ResourceNotFoundError());
     }
 
-    return right({ question });
+    return right({
+      question,
+    });
   }
 }

@@ -1,15 +1,15 @@
-import { GetQuestionBySlugUseCase } from "./get-question-by-slug";
-import { InMemoryQuestionsRepository } from "teste/in-memory-question-repository";
 import { makeQuestion } from "teste/factories/make-question";
-import { Slug } from "../../enterprise/entities/value-objects/slug";
+import { GetQuestionBySlugUseCase } from "./get-question-by-slug";
+import { Slug } from "@/domain/forum/enterprise/entities/value-objects/slug";
+import { InMemoryQuestionsRepository } from "teste/in-memory-question-repository";
 
-let inMemoryQuestionRepository: InMemoryQuestionsRepository;
+let inMemoryQuestionsRepository: InMemoryQuestionsRepository;
 let sut: GetQuestionBySlugUseCase;
 
 describe("Get Question By Slug", () => {
   beforeEach(() => {
-    inMemoryQuestionRepository = new InMemoryQuestionsRepository();
-    sut = new GetQuestionBySlugUseCase(inMemoryQuestionRepository);
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository();
+    sut = new GetQuestionBySlugUseCase(inMemoryQuestionsRepository);
   });
 
   it("should be able to get a question by slug", async () => {
@@ -17,11 +17,13 @@ describe("Get Question By Slug", () => {
       slug: Slug.create("example-question"),
     });
 
-    await inMemoryQuestionRepository.create(newQuestion);
+    await inMemoryQuestionsRepository.create(newQuestion);
 
-    const { question } = await sut.execute({ slug: "example-question" });
+    const result = await sut.execute({
+      slug: "example-question",
+    });
 
-    expect(question.id).toBeTruthy();
-    expect(question.title).toEqual(newQuestion.title);
+    expect(result.value?.question.id).toBeTruthy();
+    expect(result.value?.question.title).toEqual(newQuestion.title);
   });
 });
