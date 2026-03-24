@@ -48,6 +48,6 @@ describe("Delete Question", () => {
     });
 
     expect(result.isLeft()).toBe(true);
-    expect(result.value).toBe(NotAllowedError);
+    expect(result.value).toBeInstanceOf(NotAllowedError);
   });
 });
