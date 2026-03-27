@@ -1,15 +1,22 @@
 import { FetchQuestionAnswersCase } from "./fetch-question-answers";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { makeAnswer } from "teste/factories/make-answer";
+import { InMemoryAnswerAttachmentRepository } from "teste/in-memory-answer-attachments-repository";
 
 import { InMemoryAnswersRepository } from "teste/in-memory-answers-repository";
+import { InMemoryQuestionAttachmentRepository } from "teste/in-memory-question-attachments-repository";
 
+let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentRepository;
 let inMemoryAnswersRepository: InMemoryAnswersRepository;
 let sut: FetchQuestionAnswersCase;
 
 describe("Fetch Question Answers", () => {
   beforeEach(() => {
-    inMemoryAnswersRepository = new InMemoryAnswersRepository();
+    inMemoryAnswerAttachmentsRepository =
+      new InMemoryAnswerAttachmentRepository();
+    inMemoryAnswersRepository = new InMemoryAnswersRepository(
+      inMemoryAnswerAttachmentsRepository,
+    );
     sut = new FetchQuestionAnswersCase(inMemoryAnswersRepository);
   });
 
