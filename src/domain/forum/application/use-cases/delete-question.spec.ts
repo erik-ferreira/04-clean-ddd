@@ -4,13 +4,20 @@ import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { makeQuestion } from "teste/factories/make-question";
 import { InMemoryQuestionsRepository } from "teste/in-memory-question-repository";
 import { NotAllowedError } from "../errors/not-allowed-error";
+import { InMemoryQuestionAttachmentRepository } from "teste/in-memory-question-attachments-repository";
+import { makeQuestionAttachment } from "teste/factories/make-question-attachment";
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository;
+let inMemoryQuestionAttachmentRepository: InMemoryQuestionAttachmentRepository;
 let sut: DeleteQuestionUseCase;
 
 describe("Delete Question", () => {
   beforeEach(() => {
-    inMemoryQuestionsRepository = new InMemoryQuestionsRepository();
+    inMemoryQuestionAttachmentRepository =
+      new InMemoryQuestionAttachmentRepository();
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
+      inMemoryQuestionAttachmentRepository,
+    );
     sut = new DeleteQuestionUseCase(inMemoryQuestionsRepository);
   });
 
@@ -41,6 +48,17 @@ describe("Delete Question", () => {
     );
 
     await inMemoryQuestionsRepository.create(newQuestion);
+
+    inMemoryQuestionAttachmentRepository.items.push(
+      makeQuestionAttachment({
+        questionId: newQuestion.id,
+        attachmentId: new UniqueEntityID("1"),
+      }),
+      makeQuestionAttachment({
+        questionId: newQuestion.id,
+        attachmentId: new UniqueEntityID("2"),
+      }),
+    );
 
     const result = await sut.execute({
       questionId: "question-1",
