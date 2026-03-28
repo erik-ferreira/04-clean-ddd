@@ -1,4 +1,4 @@
-import { InMemoryNotificationRepository } from "teste/in-memory-notification-repository";
+import { InMemoryNotificationRepository } from "teste/repositories/in-memory-notification-repository";
 import { SendNotificationUseCase } from "./send-notification";
 
 let sut: SendNotificationUseCase;

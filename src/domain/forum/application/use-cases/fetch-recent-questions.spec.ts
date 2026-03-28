@@ -2,8 +2,8 @@ import { FetchRecentQuestionCase } from "./fetch-recent-questions";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 
 import { makeQuestion } from "teste/factories/make-question";
-import { InMemoryQuestionAttachmentRepository } from "teste/in-memory-question-attachments-repository";
-import { InMemoryQuestionsRepository } from "teste/in-memory-question-repository";
+import { InMemoryQuestionAttachmentRepository } from "teste/repositories/in-memory-question-attachments-repository";
+import { InMemoryQuestionsRepository } from "teste/repositories/in-memory-question-repository";
 
 let inMemoryQuestionAttachmentRepository: InMemoryQuestionAttachmentRepository;
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository;

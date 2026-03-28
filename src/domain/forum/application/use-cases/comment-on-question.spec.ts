@@ -1,9 +1,9 @@
 import { CommentOnQuestionUseCase } from "./comment-on-question";
 
-import { InMemoryQuestionsRepository } from "teste/in-memory-question-repository";
-import { InMemoryQuestionCommentsRepository } from "teste/in-memory-question-comments-repository";
+import { InMemoryQuestionsRepository } from "teste/repositories/in-memory-question-repository";
+import { InMemoryQuestionCommentsRepository } from "teste/repositories/in-memory-question-comments-repository";
 import { makeQuestion } from "teste/factories/make-question";
-import { InMemoryQuestionAttachmentRepository } from "teste/in-memory-question-attachments-repository";
+import { InMemoryQuestionAttachmentRepository } from "teste/repositories/in-memory-question-attachments-repository";
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository;
 let inMemoryQuestionAttachmentRepository: InMemoryQuestionAttachmentRepository;

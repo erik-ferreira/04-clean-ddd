@@ -1,8 +1,8 @@
 import { makeQuestion } from "teste/factories/make-question";
 import { GetQuestionBySlugUseCase } from "./get-question-by-slug";
 import { Slug } from "@/domain/forum/enterprise/entities/value-objects/slug";
-import { InMemoryQuestionsRepository } from "teste/in-memory-question-repository";
-import { InMemoryQuestionAttachmentRepository } from "teste/in-memory-question-attachments-repository";
+import { InMemoryQuestionsRepository } from "teste/repositories/in-memory-question-repository";
+import { InMemoryQuestionAttachmentRepository } from "teste/repositories/in-memory-question-attachments-repository";
 
 let inMemoryQuestionAttachmentRepository: InMemoryQuestionAttachmentRepository;
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository;
