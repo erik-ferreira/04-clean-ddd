@@ -6,7 +6,8 @@
   "rules": {
     "no-useless-constructor": "off",
     "quotes": "off",
-    "prettier/prettier": "off"
+    "prettier/prettier": "off",
+    "no-new": "off"
   },
   "env": {
     "vitest-globals/env": true
